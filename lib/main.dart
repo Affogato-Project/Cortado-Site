@@ -1,5 +1,7 @@
 library cortado.site;
 
+import 'package:url_launcher/url_launcher.dart' as launcher;
+
 import 'package:project_redline/multi_platform/multi_platform.dart';
 import 'package:project_redline/project_redline.dart';
 
@@ -7,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 part './design_system/colors.dart';
+part './design_system/button.dart';
 
 part './responsive_system/detected_platforms.dart';
 part './responsive_system/responsive_typefaces.dart';
@@ -549,6 +552,81 @@ class CortadoSite extends StatelessWidget with ViewportScaling {
                         ],
                       )
                     ],
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              height: 1.34 * Dimensions.height(),
+              width: Dimensions.width(),
+              child: Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  Positioned(
+                    top: 0,
+                    left: 0,
+                    child: Container(
+                      width: Dimensions.width(),
+                      height: Dimensions.height() /
+                          desktopPlatform.baseHeight *
+                          612,
+                      decoration: ShapeDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment(0.50, 0.65),
+                          end: Alignment(0.50, 0.00),
+                          colors: [
+                            CortadoColor.brightGold.withOpacity(0),
+                            CortadoColor.brightGold.withOpacity(0.5),
+                          ],
+                        ),
+                        shape: OvalBorder(),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    bottom: -270,
+                    left: 0,
+                    child: Container(
+                      width: Dimensions.width(),
+                      height: Dimensions.height() /
+                          desktopPlatform.baseHeight *
+                          612,
+                      decoration: ShapeDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment(0.50, 0.1),
+                          end: Alignment(0.50, -0.65),
+                          colors: [
+                            CortadoColor.brightGold.withOpacity(0.5),
+                            CortadoColor.brightGold.withOpacity(0.0),
+                          ],
+                        ),
+                        shape: OvalBorder(),
+                      ),
+                    ),
+                  ),
+                  Positioned.fill(
+                    top: 200,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Still doubtful? Try it out yourself!',
+                          style: sectionTitle
+                              .apply()
+                              .copyWith(color: CortadoColor.letterBrown),
+                        ),
+                        const SizedBox(height: 20),
+                        Text(
+                          'Seven days free. No credit card required.',
+                          style: heading3
+                              .apply()
+                              .copyWith(color: CortadoColor.letterBrown),
+                        ),
+                        const SizedBox(height: 40),
+                        const ButtonWidget(),
+                      ],
+                    ),
                   ),
                 ],
               ),
