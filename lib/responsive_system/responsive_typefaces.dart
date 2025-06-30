@@ -17,6 +17,13 @@ class Title extends ResponsiveTypeface {
         fontWeight: FontWeight.w900,
         height: 1.19,
       ),
+      mobilePlatform: TextStyle(
+        color: CortadoColor.roastGold,
+        fontSize: scaled(72, 62),
+        fontFamily: 'Matangi',
+        fontWeight: FontWeight.w900,
+        height: 1.19,
+      ),
     });
   }
 }
@@ -27,6 +34,13 @@ class Subtitle extends ResponsiveTypeface {
       desktopPlatform: TextStyle(
         color: CortadoColor.roastGold,
         fontSize: scaled(36, 28),
+        fontFamily: 'Matangi',
+        fontWeight: FontWeight.w800,
+        height: 1.19,
+      ),
+      mobilePlatform: TextStyle(
+        color: CortadoColor.roastGold,
+        fontSize: scaled(21, 18),
         fontFamily: 'Matangi',
         fontWeight: FontWeight.w800,
         height: 1.19,
@@ -45,6 +59,13 @@ class SectionTitle extends ResponsiveTypeface {
         fontWeight: FontWeight.w300,
         height: 1.19,
       ),
+      mobilePlatform: TextStyle(
+        color: CortadoColor.letterBrown,
+        fontSize: scaled(35, 28),
+        fontFamily: 'Matangi',
+        fontWeight: FontWeight.w300,
+        height: 1.19,
+      ),
     });
   }
 }
@@ -54,6 +75,13 @@ class Body1 extends ResponsiveTypeface {
     styleDelegates.addAll({
       desktopPlatform: TextStyle(
         fontSize: scaled(18, 14),
+        fontFamily: 'Matangi',
+        fontWeight: FontWeight.w500,
+        height: 2.04,
+        letterSpacing: 0.45,
+      ),
+      mobilePlatform: TextStyle(
+        fontSize: scaled(13, 9),
         fontFamily: 'Matangi',
         fontWeight: FontWeight.w500,
         height: 2.04,
@@ -73,6 +101,13 @@ class Heading3 extends ResponsiveTypeface {
         height: 2.04,
         letterSpacing: 0.80,
       ),
+      mobilePlatform: TextStyle(
+        fontSize: scaled(32, 24),
+        fontFamily: 'Matangi',
+        fontWeight: FontWeight.w800,
+        height: 2.04,
+        letterSpacing: 0.80,
+      ),
     });
   }
 }
@@ -81,6 +116,14 @@ class Button extends ResponsiveTypeface {
   Button() {
     styleDelegates.addAll({
       desktopPlatform: TextStyle(
+        color: CortadoColor.mediumBrown,
+        fontSize: scaled(20, 14),
+        fontFamily: 'Matangi',
+        fontWeight: FontWeight.w900,
+        height: 1.19,
+        letterSpacing: 0.40,
+      ),
+      mobilePlatform: TextStyle(
         color: CortadoColor.mediumBrown,
         fontSize: scaled(20, 14),
         fontFamily: 'Matangi',
