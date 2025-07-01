@@ -55,11 +55,9 @@ class CortadoSite extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: CortadoColor.darkBrown,
-      body: SingleChildScrollView(
-        child: Multiplatform.currentPlatform == desktopPlatform
-            ? const DesktopView()
-            : const MobileView(),
-      ),
+      body: Multiplatform.currentPlatform == desktopPlatform
+          ? const DesktopView()
+          : const MobileView(),
     );
   }
 }

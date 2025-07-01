@@ -102,7 +102,7 @@ class Heading3 extends ResponsiveTypeface {
         letterSpacing: 0.80,
       ),
       mobilePlatform: TextStyle(
-        fontSize: scaled(32, 24),
+        fontSize: scaled(15, 10),
         fontFamily: 'Matangi',
         fontWeight: FontWeight.w800,
         height: 2.04,
@@ -125,7 +125,7 @@ class Button extends ResponsiveTypeface {
       ),
       mobilePlatform: TextStyle(
         color: CortadoColor.mediumBrown,
-        fontSize: scaled(20, 14),
+        fontSize: scaled(15, 10),
         fontFamily: 'Matangi',
         fontWeight: FontWeight.w900,
         height: 1.19,
