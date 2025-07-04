@@ -258,7 +258,7 @@ class DesktopView extends StatelessWidget with ViewportScaling {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(10),
                             child: Image.asset(
-                              'images/Workspaces.png',
+                              'images/Image1.png',
                               width: Dimensions.width() / 2 + 100,
                               fit: BoxFit.cover,
                             ),
@@ -362,28 +362,26 @@ class DesktopView extends StatelessWidget with ViewportScaling {
                     const SizedBox(height: 60),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         DecoratedBox(
                           position: DecorationPosition.foreground,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            border: Border.all(
-                              color: CortadoColor.lightBrown,
-                            ),
                           ),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(10),
                             child: Image.asset(
-                              'images/Workspaces.png',
-                              width: Dimensions.width() / 2 + 100,
+                              'images/Graphic2.png',
+                              width: responsive(450),
+                              height: responsive(450),
                               fit: BoxFit.cover,
                             ),
                           ),
                         ),
-                        const SizedBox(width: 40),
+                        const SizedBox(width: 100),
                         SizedBox(
-                          width: Dimensions.width() / 2 - responsive(340),
+                          width: Dimensions.width() / 2 - responsive(140),
                           child: ShaderMask(
                             blendMode: BlendMode.srcATop,
                             shaderCallback: (Rect bounds) {
@@ -481,20 +479,17 @@ class DesktopView extends StatelessWidget with ViewportScaling {
                           ),
                         ),
                         const SizedBox(width: 40),
-                        DecoratedBox(
-                          position: DecorationPosition.foreground,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(
-                              color: CortadoColor.lightBrown,
+                        SizedBox(
+                          width: responsive(800),
+                          height: responsive(471),
+                          child: DecoratedBox(
+                            position: DecorationPosition.foreground,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
                             ),
-                          ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: Image.asset(
-                              'images/Workspaces.png',
-                              width: Dimensions.width() / 2 + 100,
-                              fit: BoxFit.cover,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: const VideoPlayerWidget(),
                             ),
                           ),
                         ),
@@ -585,4 +580,31 @@ class DesktopView extends StatelessWidget with ViewportScaling {
       ),
     );
   }
+}
+
+class VideoPlayerWidget extends StatefulWidget {
+  const VideoPlayerWidget({super.key});
+
+  @override
+  State<StatefulWidget> createState() => VideoPlayerWidgetState();
+}
+
+class VideoPlayerWidgetState extends State<VideoPlayerWidget> {
+  final videoController =
+      player.VideoPlayerController.asset('videos/Video3.mp4');
+
+  @override
+  void initState() {
+    Future.delayed(const Duration(seconds: 1), () async {
+      await videoController.initialize();
+      await videoController.setLooping(true);
+      await videoController.play();
+    });
+    //                               width: Dimensions.width() / 2 + 100,
+
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) => player.VideoPlayer(videoController);
 }

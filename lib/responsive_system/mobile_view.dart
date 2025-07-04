@@ -245,7 +245,7 @@ class MobileViewState extends State<MobileView> with ViewportScaling {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(10),
                             child: Image.asset(
-                              'images/Workspaces.png',
+                              'images/Image1.png',
                               width: Dimensions.width() - 50,
                               fit: BoxFit.cover,
                             ),
@@ -287,14 +287,11 @@ class MobileViewState extends State<MobileView> with ViewportScaling {
                           position: DecorationPosition.foreground,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            border: Border.all(
-                              color: CortadoColor.lightBrown,
-                            ),
                           ),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(10),
                             child: Image.asset(
-                              'images/Workspaces.png',
+                              'images/Graphic2.png',
                               width: Dimensions.width() - 50,
                               fit: BoxFit.cover,
                             ),
@@ -332,20 +329,17 @@ class MobileViewState extends State<MobileView> with ViewportScaling {
                           style: sectionTitle.apply(),
                         ),
                         const SizedBox(height: 40),
-                        DecoratedBox(
-                          position: DecorationPosition.foreground,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(
-                              color: CortadoColor.lightBrown,
+                        SizedBox(
+                          width: Dimensions.width() - 50,
+                          height: 0.589 * (Dimensions.width() - 50),
+                          child: DecoratedBox(
+                            position: DecorationPosition.foreground,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
                             ),
-                          ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: Image.asset(
-                              'images/Workspaces.png',
-                              width: Dimensions.width() - 50,
-                              fit: BoxFit.cover,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: const VideoPlayerWidget(),
                             ),
                           ),
                         ),

@@ -1,6 +1,7 @@
 library cortado.site;
 
 import 'package:url_launcher/url_launcher.dart' as launcher;
+import 'package:video_player/video_player.dart' as player;
 
 import 'package:project_redline/multi_platform/multi_platform.dart';
 import 'package:project_redline/project_redline.dart';
