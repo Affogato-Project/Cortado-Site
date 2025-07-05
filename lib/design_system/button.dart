@@ -24,8 +24,7 @@ class ButtonWidgetState extends State<ButtonWidget> {
         onTapDown: (_) => setState(() => state = ButtonState.pressed),
         onTapUp: (_) => setState(() {
           state = ButtonState.hover;
-          launcher.launchUrl(Uri.parse(
-              'https://cortado-project.notion.site/2219b8921cdc801ab12df0f7faf46156'));
+          launcher.launchUrl(Uri.parse('https://tally.so/r/npNjVJ'));
         }),
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 150),

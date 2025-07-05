@@ -482,16 +482,7 @@ class DesktopView extends StatelessWidget with ViewportScaling {
                         SizedBox(
                           width: responsive(800),
                           height: responsive(471),
-                          child: DecoratedBox(
-                            position: DecorationPosition.foreground,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(10),
-                              child: const VideoPlayerWidget(),
-                            ),
-                          ),
+                          child: const VideoPlayerWidget(),
                         ),
                         const SizedBox(
                           width: 60,
@@ -589,22 +580,49 @@ class VideoPlayerWidget extends StatefulWidget {
   State<StatefulWidget> createState() => VideoPlayerWidgetState();
 }
 
-class VideoPlayerWidgetState extends State<VideoPlayerWidget> {
-  final videoController =
-      player.VideoPlayerController.asset('videos/Video3.mp4');
+class VideoPlayerWidgetState extends State<VideoPlayerWidget>
+    with ViewportScaling {
+  final player.VideoPlayerController videoController =
+      player.VideoPlayerController.asset(
+    'assets/videos/Video3.mp4',
+    videoPlayerOptions:
+        player.VideoPlayerOptions(allowBackgroundPlayback: true),
+  );
+  bool hasInit = false;
 
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 1), () async {
-      await videoController.initialize();
-      await videoController.setLooping(true);
-      await videoController.play();
+      try {
+        await videoController.initialize();
+        await videoController.setLooping(true);
+        await videoController.play();
+      } catch (e, st) {
+        print(e);
+        print(st);
+      }
     });
-    //                               width: Dimensions.width() / 2 + 100,
 
     super.initState();
   }
 
   @override
-  Widget build(BuildContext context) => player.VideoPlayer(videoController);
+  Widget build(BuildContext context) => FittedBox(
+        fit: BoxFit.cover,
+        clipBehavior: Clip.hardEdge,
+        child: SizedBox(
+          width: responsive(800),
+          height: responsive(471),
+          child: AspectRatio(
+            aspectRatio: videoController.value.aspectRatio,
+            child: player.VideoPlayer(videoController),
+          ),
+        ),
+      );
+
+  @override
+  void dispose() {
+    videoController.dispose();
+    super.dispose();
+  }
 }
