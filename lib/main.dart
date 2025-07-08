@@ -29,7 +29,7 @@ void main() {
         if ((width > 340 && width < 550) && (height > 700 && height < 1200)) {
           return mobilePlatform;
         } else {
-          return unsupportedPlatform;
+          return mobilePlatform;
         }
       }
     },

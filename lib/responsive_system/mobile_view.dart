@@ -244,8 +244,8 @@ class MobileViewState extends State<MobileView> with ViewportScaling {
                           ),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(10),
-                            child: Image.asset(
-                              'images/Image1.png',
+                            child: Image.network(
+                              'https://raw.githubusercontent.com/Affogato-Project/Cortado-Site/main/assets/images/comparison.png?raw=true',
                               width: Dimensions.width() - 50,
                               fit: BoxFit.cover,
                             ),
@@ -290,9 +290,9 @@ class MobileViewState extends State<MobileView> with ViewportScaling {
                           ),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(10),
-                            child: Image.asset(
-                              'images/Graphic2.png',
-                              width: Dimensions.width() - 50,
+                            child: Image.network(
+                              'https://raw.githubusercontent.com/Affogato-Project/Cortado-Site/main/assets/images/Graphic2.png?raw=true',
+                              width: Dimensions.width() - 200,
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -321,6 +321,25 @@ class MobileViewState extends State<MobileView> with ViewportScaling {
                             ),
                           ),
                         ),
+                        const SizedBox(height: 30),
+                        SizedBox(
+                          width: Dimensions.width() - 50,
+                          height: (Dimensions.width() - 50) * 0.589,
+                          child: const VideoPlayerWidget(
+                            'https://raw.githubusercontent.com/Affogato-Project/Cortado-Site/main/assets/videos/job_creation.mov?raw=true',
+                          ),
+                        ),
+                        const SizedBox(height: 30),
+                        SizedBox(
+                          width: Dimensions.width() - 50,
+                          child: Text(
+                            'Create "jobs" — run commands in a separate environment with a different machine configuration than your working environment. This not only reduces costs further but also allows you to leverage GPUs for ML workloads.',
+                            textAlign: TextAlign.center,
+                            style: body1
+                                .apply()
+                                .copyWith(color: CortadoColor.letterBrown),
+                          ),
+                        ),
                         const SizedBox(height: 100),
 
                         // 1:1 RATIO
@@ -329,20 +348,12 @@ class MobileViewState extends State<MobileView> with ViewportScaling {
                           style: sectionTitle.apply(),
                         ),
                         const SizedBox(height: 40),
-                        SizedBox(
+                        Image.network(
+                          'https://raw.githubusercontent.com/Affogato-Project/Cortado-Site/main/assets/images/realtime_billing.png?raw=true',
                           width: Dimensions.width() - 50,
-                          height: 0.589 * (Dimensions.width() - 50),
-                          child: DecoratedBox(
-                            position: DecorationPosition.foreground,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(10),
-                              child: const VideoPlayerWidget(),
-                            ),
-                          ),
+                          fit: BoxFit.cover,
                         ),
+
                         const SizedBox(height: 30),
                         SizedBox(
                           width: Dimensions.width() - 50,

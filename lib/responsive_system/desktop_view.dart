@@ -157,122 +157,121 @@ class DesktopView extends StatelessWidget with ViewportScaling {
           ),
           const SizedBox(height: 400),
           // SMALL BUT STRONG
-          ViewportSize(
-            child: Stack(
-              clipBehavior: Clip.none,
-              children: [
-                Positioned(
-                  left: responsive(-380),
-                  top: responsive(680),
-                  child: Container(
-                    transform: Matrix4.identity()
-                      ..translate(0.0, 0.0)
-                      ..rotateZ(-1),
-                    width: responsive(570),
-                    height: responsive(450),
-                    decoration: ShapeDecoration(
-                      gradient: LinearGradient(
-                        begin: const Alignment(-0.27, 0.07),
-                        end: const Alignment(1.07, 0.67),
-                        stops: const [0, 0.6],
-                        colors: [
-                          CortadoColor.brightGold.withOpacity(0.45),
-                          CortadoColor.brightGold.withOpacity(0),
-                        ],
-                      ),
-                      shape: const OvalBorder(),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  top: responsive(200),
-                  right: responsive(-1200),
-                  child: Container(
-                    transform: Matrix4.identity()
-                      ..translate(0.0, 0.0)
-                      ..rotateZ(2.4),
-                    width: responsive(700),
-                    height: responsive(600),
-                    decoration: ShapeDecoration(
-                      gradient: LinearGradient(
-                        begin: const Alignment(-0.27, 0.07),
-                        end: const Alignment(1.07, 0.67),
-                        stops: const [0, 0.65],
-                        colors: [
-                          CortadoColor.brightGold.withOpacity(0.5),
-                          CortadoColor.brightGold.withOpacity(0),
-                        ],
-                      ),
-                      shape: const OvalBorder(),
-                    ),
-                  ),
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const SizedBox(height: 60),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 60),
-                      child: Text(
-                        'SMALL BUT STRONG',
-                        style: sectionTitle.apply(),
-                      ),
-                    ),
-                    const SizedBox(height: 60),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          width: Dimensions.width() / 2 - responsive(340),
-                          child: ShaderMask(
-                            blendMode: BlendMode.srcATop,
-                            shaderCallback: (Rect bounds) {
-                              return LinearGradient(
-                                begin: const Alignment(0.10, 1),
-                                end: const Alignment(1.37, 0.24),
-                                colors: [
-                                  CortadoColor.roastGold,
-                                  CortadoColor.roastGold.withOpacity(0.4),
-                                ],
-                              ).createShader(bounds);
-                            },
-                            child: Text(
-                              'Cortado offers a minimalistic feature set, meant for hobbyists and indie devs that really just need something affordable. Nonetheless, it strives to be reliable and to deliver that experience as if you were working on your own machine.',
-                              textAlign: TextAlign.right,
-                              style: body1
-                                  .apply()
-                                  .copyWith(color: CortadoColor.darkBrown),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(width: 40),
-                        DecoratedBox(
-                          position: DecorationPosition.foreground,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(
-                              color: CortadoColor.lightBrown,
-                            ),
-                          ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: Image.asset(
-                              'images/Image1.png',
-                              width: Dimensions.width() / 2 + 100,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 60,
-                        )
+          Stack(
+            clipBehavior: Clip.none,
+            children: [
+              Positioned(
+                left: responsive(-380),
+                top: responsive(680),
+                child: Container(
+                  transform: Matrix4.identity()
+                    ..translate(0.0, 0.0)
+                    ..rotateZ(-1),
+                  width: responsive(570),
+                  height: responsive(450),
+                  decoration: ShapeDecoration(
+                    gradient: LinearGradient(
+                      begin: const Alignment(-0.27, 0.07),
+                      end: const Alignment(1.07, 0.67),
+                      stops: const [0, 0.6],
+                      colors: [
+                        CortadoColor.brightGold.withOpacity(0.45),
+                        CortadoColor.brightGold.withOpacity(0),
                       ],
-                    )
-                  ],
+                    ),
+                    shape: const OvalBorder(),
+                  ),
                 ),
-              ],
-            ),
+              ),
+              Positioned(
+                top: responsive(200),
+                right: responsive(-1200),
+                child: Container(
+                  transform: Matrix4.identity()
+                    ..translate(0.0, 0.0)
+                    ..rotateZ(2.4),
+                  width: responsive(700),
+                  height: responsive(600),
+                  decoration: ShapeDecoration(
+                    gradient: LinearGradient(
+                      begin: const Alignment(-0.27, 0.07),
+                      end: const Alignment(1.07, 0.67),
+                      stops: const [0, 0.65],
+                      colors: [
+                        CortadoColor.brightGold.withOpacity(0.5),
+                        CortadoColor.brightGold.withOpacity(0),
+                      ],
+                    ),
+                    shape: const OvalBorder(),
+                  ),
+                ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const SizedBox(height: 60),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 60),
+                    child: Text(
+                      'SMALL BUT STRONG',
+                      style: sectionTitle.apply(),
+                    ),
+                  ),
+                  const SizedBox(height: 60),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        width: Dimensions.width() / 2 - responsive(340),
+                        child: ShaderMask(
+                          blendMode: BlendMode.srcATop,
+                          shaderCallback: (Rect bounds) {
+                            return LinearGradient(
+                              begin: const Alignment(0.10, 1),
+                              end: const Alignment(1.37, 0.24),
+                              colors: [
+                                CortadoColor.roastGold,
+                                CortadoColor.roastGold.withOpacity(0.4),
+                              ],
+                            ).createShader(bounds);
+                          },
+                          child: Text(
+                            'Cortado offers a minimalistic feature set, meant for hobbyists and indie devs that really just need something affordable.',
+                            textAlign: TextAlign.right,
+                            style: body1
+                                .apply()
+                                .copyWith(color: CortadoColor.darkBrown),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 40),
+                      DecoratedBox(
+                        position: DecorationPosition.foreground,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(
+                            color: CortadoColor.lightBrown,
+                          ),
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.network(
+                            'https://raw.githubusercontent.com/Affogato-Project/Cortado-Site/main/assets/images/comparison.png?raw=true',
+                            width: Dimensions.width() / 2 + 160,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 60,
+                      )
+                    ],
+                  ),
+                ],
+              ),
+            ],
           ),
           const SizedBox(height: 120),
           // BOLD BUT PLEASANT
@@ -371,8 +370,8 @@ class DesktopView extends StatelessWidget with ViewportScaling {
                           ),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(10),
-                            child: Image.asset(
-                              'images/Graphic2.png',
+                            child: Image.network(
+                              'https://raw.githubusercontent.com/Affogato-Project/Cortado-Site/main/assets/images/Graphic2.png?raw=true',
                               width: responsive(450),
                               height: responsive(450),
                               fit: BoxFit.cover,
@@ -411,6 +410,29 @@ class DesktopView extends StatelessWidget with ViewportScaling {
               ],
             ),
           ),
+          Row(
+            children: [
+              const Spacer(),
+              SizedBox(
+                width: Dimensions.width() * 0.8,
+                height: Dimensions.width() * 0.8 * 0.589,
+                child: const VideoPlayerWidget(
+                  'https://raw.githubusercontent.com/Affogato-Project/Cortado-Site/main/assets/videos/job_creation.mov?raw=true',
+                ),
+              ),
+              const Spacer(),
+            ],
+          ),
+          const SizedBox(height: 30),
+          SizedBox(
+            width: Dimensions.width() * 0.7,
+            child: Text(
+              'Create "jobs" — run commands in a separate environment with a different machine configuration than your working environment. This not only reduces costs further but also allows you to leverage GPUs for ML workloads.',
+              textAlign: TextAlign.center,
+              style: body1.apply().copyWith(color: CortadoColor.letterBrown),
+            ),
+          ),
+          const SizedBox(height: 60),
           // 1:1 RATIO
           ViewportSize(
             child: Stack(
@@ -479,10 +501,10 @@ class DesktopView extends StatelessWidget with ViewportScaling {
                           ),
                         ),
                         const SizedBox(width: 40),
-                        SizedBox(
+                        Image.network(
+                          'https://raw.githubusercontent.com/Affogato-Project/Cortado-Site/main/assets/images/realtime_billing.png?raw=true',
                           width: responsive(800),
                           height: responsive(471),
-                          child: const VideoPlayerWidget(),
                         ),
                         const SizedBox(
                           width: 60,
@@ -574,7 +596,8 @@ class DesktopView extends StatelessWidget with ViewportScaling {
 }
 
 class VideoPlayerWidget extends StatefulWidget {
-  const VideoPlayerWidget({super.key});
+  final String path;
+  const VideoPlayerWidget(this.path, {super.key});
 
   @override
   State<StatefulWidget> createState() => VideoPlayerWidgetState();
@@ -582,16 +605,16 @@ class VideoPlayerWidget extends StatefulWidget {
 
 class VideoPlayerWidgetState extends State<VideoPlayerWidget>
     with ViewportScaling {
-  final player.VideoPlayerController videoController =
-      player.VideoPlayerController.asset(
-    'assets/videos/Video3.mp4',
-    videoPlayerOptions:
-        player.VideoPlayerOptions(allowBackgroundPlayback: true),
-  );
+  late final player.VideoPlayerController videoController;
   bool hasInit = false;
 
   @override
   void initState() {
+    videoController = player.VideoPlayerController.networkUrl(
+      Uri.parse(widget.path),
+      videoPlayerOptions:
+          player.VideoPlayerOptions(allowBackgroundPlayback: true),
+    );
     Future.delayed(const Duration(seconds: 1), () async {
       try {
         await videoController.initialize();
